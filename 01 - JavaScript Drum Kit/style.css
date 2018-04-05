@@ -15,6 +15,7 @@ body,html {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .key {
@@ -30,6 +31,9 @@ body,html {
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
   cursor: pointer;
+  flex: 1;
+  min-width: 50px;
+  max-width: 80px;
 }
 
 .playing {
