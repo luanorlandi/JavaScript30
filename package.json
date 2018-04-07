@@ -1,5 +1,5 @@
 {
-  "name": "javascript30",
+  "name": "meme30",
   "version": "1.0.0",
   "description": "![](https://javascript30.com/images/JS3-social-share.png)",
   "main": "index.js",
@@ -23,13 +23,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luanorlandi/JavaScript30.git"
+    "url": "git+https://github.com/luanorlandi/Meme30.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luanorlandi/JavaScript30/issues"
+    "url": "https://github.com/luanorlandi/Meme30/issues"
   },
-  "homepage": "https://github.com/luanorlandi/JavaScript30#readme"
+  "homepage": "https://luanorlandi.github.io/Meme30/"
 }
