@@ -17,7 +17,8 @@
     "babel-preset-env": "^1.6.1"
   },
   "scripts": {
-    "start": "parcel '01 - JavaScript Drum Kit/index.html'",
+    "start": "parcel index.html",
+    "build": "rm -rf dist && parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
