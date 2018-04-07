@@ -1,3 +1,7 @@
+import pathAudio1 from './sounds/1.mp3';
+import pathAudio2 from './sounds/2.mp3';
+import './style.css';
+
 const START_DEGREE = 90;
 
 const rotateElement = (element, degree) => {
@@ -34,8 +38,8 @@ const setDate = () => {
 }
 
 function* playTick() {
-  const audioFirst = new Audio('sounds/1.mp3');
-  const audioSecond = new Audio('sounds/2.mp3');
+  const audioFirst = new Audio(pathAudio1);
+  const audioSecond = new Audio(pathAudio2);
 
   while (true) {
     audioFirst.currentTime = 0;
