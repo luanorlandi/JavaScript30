@@ -1,0 +1,34 @@
+{
+  "name": "javascript30",
+  "version": "1.0.0",
+  "description": "![](https://javascript30.com/images/JS3-social-share.png)",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "parcel-bundler": "^1.7.0",
+    "sounds": "^1.0.2",
+    "style.css": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "scripts": {
+    "start": "parcel '01 - JavaScript Drum Kit/index.html'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanorlandi/JavaScript30.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luanorlandi/JavaScript30/issues"
+  },
+  "homepage": "https://github.com/luanorlandi/JavaScript30#readme"
+}
