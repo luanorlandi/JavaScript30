@@ -1,5 +1,5 @@
 {
-  "name": "meme30",
+  "name": "javascript30",
   "version": "1.0.0",
   "description": "![](https://javascript30.com/images/JS3-social-share.png)",
   "main": "index.js",
@@ -18,18 +18,18 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "build": "rm -rf dist && parcel build index.html --public-url /Meme30/",
+    "build": "rm -rf dist && parcel build index.html --public-url /javascript30/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luanorlandi/Meme30.git"
+    "url": "git+https://github.com/luanorlandi/javascript30.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luanorlandi/Meme30/issues"
+    "url": "https://github.com/luanorlandi/javascript30/issues"
   },
-  "homepage": "https://luanorlandi.github.io/Meme30/"
+  "homepage": "https://luanorlandi.github.io/javascript30/"
 }
