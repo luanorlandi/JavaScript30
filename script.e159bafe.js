@@ -6,12 +6,12 @@ var e=function(){return this}()||Function("return this")(),r=e.regeneratorRuntim
 },{"./runtime":59}],56:[function(require,module,exports) {
 module.exports=require("regenerator-runtime");
 },{"regenerator-runtime":58}],54:[function(require,module,exports) {
-module.exports="/Meme30/1.fed99a21.mp3";
+module.exports="/javascript30/1.fed99a21.mp3";
 },{}],55:[function(require,module,exports) {
-module.exports="/Meme30/2.877996fb.mp3";
+module.exports="/javascript30/2.877996fb.mp3";
 },{}],53:[function(require,module,exports) {
 
 },{"./images/background.png":[["background.6b493f94.png",57],57]}],28:[function(require,module,exports) {
 "use strict";var e=require("babel-runtime/regenerator"),t=o(e),r=require("./sounds/1.mp3"),n=o(r),u=require("./sounds/2.mp3"),a=o(u);function o(e){return e&&e.__esModule?e:{default:e}}require("./style.css");var s=t.default.mark(m),c=90,i=function(e,t){var r=t==c?0:.1;e.style.transitionDuration=r+"s",e.style.transform="rotate("+t+"deg)"},d=function(e){var t=document.querySelector(".second-hand"),r=e.getSeconds()/60*360+c;i(t,r)},f=function(e){var t=document.querySelector(".minute-hand"),r=e.getMinutes()/60*360+c;i(t,r)},l=function(e){var t=document.querySelector(".hour-hand"),r=e.getHours()/12*360+c;i(t,r)},v=function(){var e=new Date;d(e),f(e),l(e)};function m(){var e,r;return t.default.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:e=new Audio(n.default),r=new Audio(a.default);case 2:return e.currentTime=0,e.play(),void(t.next=7);case 7:return r.currentTime=0,r.play(),void(t.next=11);case 11:t.next=2;break;case 13:case"end":return t.stop()}},s,this)}var y=m();setInterval(function(){v(),y.next()},1e3);
 },{"babel-runtime/regenerator":56,"./sounds/1.mp3":54,"./sounds/2.mp3":55,"./style.css":53}]},{},[28])
-//# sourceMappingURL=/Meme30/script.f39b7adf.map
+//# sourceMappingURL=/javascript30/script.e159bafe.map
