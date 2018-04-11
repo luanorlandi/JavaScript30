@@ -1,8 +1,10 @@
-import pathAudio1 from './sounds/1.mp3';
-import pathAudio2 from './sounds/2.mp3';
+import pathAudio1 from './sounds/vitas-ahahah.wav';
+import pathAudio2 from './sounds/vitas-hahaha.wav';
+import pathAudioMinute from './sounds/vitas-blblbl.wav';
 import './style.css';
 
 const START_DEGREE = 90;
+const MINUTE_CHANGE = 0;
 
 const rotateElement = (element, degree) => {
   const trasitionDuration = degree == START_DEGREE ? 0 : 0.1;
@@ -29,32 +31,30 @@ const setHourHand = (date) => {
   rotateElement(hand, degree);
 }
 
-const setDate = () => {
-  const now = new Date();
-
-  setSecondHand(now);
-  setMinuteHand(now);
-  setHourHand(now);
+const setDate = (date) => {
+  setSecondHand(date);
+  setMinuteHand(date);
+  setHourHand(date);
 }
 
-function* playTick() {
-  const audioFirst = new Audio(pathAudio1);
-  const audioSecond = new Audio(pathAudio2);
+const playTick = (date) => {
+  const seconds = date.getSeconds();
 
-  while (true) {
-    audioFirst.currentTime = 0;
+  if (seconds === MINUTE_CHANGE) {
+    const audioMinute = new Audio(pathAudioMinute);
+    audioMinute.play();
+  } else if (seconds % 2) {
+    const audioFirst = new Audio(pathAudio1);
     audioFirst.play();
-    yield;
-    
-    audioSecond.currentTime = 0;
+  } else {
+    const audioSecond = new Audio(pathAudio2);
     audioSecond.play();
-    yield;
   }
 }
 
-const tick = playTick();
-
 setInterval(() => {
-  setDate();
-  tick.next();
+  const now = new Date();
+
+  setDate(now);
+  playTick(now);
 }, 1000);
