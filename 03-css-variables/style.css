@@ -1,36 +1,49 @@
 :root {
-    --spacing: 10px;
-    --base: #ffc600;
-    --blur: 10px;
+  --backgroundColor: 255;
+  --textColor: 0;
 }
-
-img {
-    padding: var(--spacing);
-    background: var(--base);
-    filter: blur(var(--blur));
-}
-
-.hl {
-    color: var(--base);
-}
-
-/*
-misc styles, nothing to do with CSS variables
-*/
 
 body {
-    text-align: center;
-    background: #193549;
-    color: white;
-    font-family: 'helvetica neue', sans-serif;
-    font-weight: 100;
-    font-size: 50px;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(var(--backgroundColor),
+  var(--backgroundColor),
+  var(--backgroundColor));
+  height: 100vh;
+  margin: 0 5vw;
 }
 
-.controls {
-    margin-bottom: 50px;
+.slider {
+  z-index: 0;
 }
 
-input {
-    width: 100px;
+.slider h1 {
+  font-size: 8vw;
+  letter-spacing: 5vw;
+  margin: auto;
+  color: rgb(var(--textColor),
+    var(--textColor),
+    var(--textColor));
+}
+
+.slider input {
+  position: relative;
+  z-index: 2;
+  margin-top: 3vh;
+  margin-bottom: 20vh;
+  width: 100%;
+}
+
+.slider .overlay {
+  position: absolute;
+  z-index: 1;
+  left: 0vw;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(var(--backgroundColor),
+    var(--backgroundColor),
+    var(--backgroundColor));
 }

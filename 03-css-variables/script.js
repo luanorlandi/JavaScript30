@@ -1,13 +1,65 @@
 import './style.css';
+import pathAudioStart from './sounds/omewa-no-speak-start.wav';
+import pathAudioLoop from './sounds/omewa-no-speak-loop.wav';
 
-const inputs = document.querySelectorAll('.controls input');
+const MAX_VIEW_WIDTH = 66.5;
+const MIN_VIEW_WIDTH = 17;
+const MAX_RGB_VALUE = 255;
+const MAX_INTERVAL = 300;
+const MIN_VALUE_START_SOUND = 140;
+const INTERVAL_MULTIPLIER = MAX_INTERVAL / MAX_RGB_VALUE;
 
-function handleUpdate() {
-    const suffix = this.dataset.sizing || '';
-    document.documentElement.style.setProperty(
-        `--${this.name}`, `${this.value}${suffix}`
-    );
+const swapColors = () => {
+  const bodyStyle = getComputedStyle(document.body);
+  const backgroundColor = bodyStyle.getPropertyValue('--backgroundColor');
+  const textColor = bodyStyle.getPropertyValue('--textColor');
+
+  document.documentElement.style.setProperty('--backgroundColor', textColor);
+  document.documentElement.style.setProperty('--textColor', backgroundColor);
 }
 
-inputs.forEach(input => input.addEventListener('change', handleUpdate));
-inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+const loopSwap = () => {
+  const input = document.querySelector('.slider input');
+  const timeout = INTERVAL_MULTIPLIER * (MAX_RGB_VALUE - input.value);
+
+  if (timeout !== MAX_INTERVAL) {
+    swapColors();
+  }
+
+  return setTimeout(loopSwap, timeout);
+}
+
+const playAudio = () => {
+  const audioStart = new Audio(pathAudioStart);
+
+  audioStart.addEventListener('ended', () => {
+    const audioLoop = new Audio(pathAudioLoop);
+    audioLoop.loop = true;
+    audioLoop.play();
+  });
+
+  audioStart.play();
+}
+
+const handleSlider = (event) => {
+  const input = document.querySelector('.slider input');
+  const overlay = document.querySelector('.slider .overlay');
+  let width;
+  
+  if (event.target.value < MIN_VALUE_START_SOUND) {
+    width = MIN_VIEW_WIDTH + MAX_VIEW_WIDTH * event.target.value / MAX_RGB_VALUE;
+  } else {
+    width = 100;
+    input.value = input.max;
+    input.disabled = true;
+    input.style.setProperty('visibility', 'hidden');
+    input.removeEventListener('input', handleSlider);
+    playAudio();
+  }
+
+  overlay.style.setProperty('left', `${width}vw`);
+}
+
+loopSwap();
+const input = document.querySelector('.slider input');
+input.addEventListener('input', handleSlider);
