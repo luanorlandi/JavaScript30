@@ -9,6 +9,9 @@ const MAX_INTERVAL = 300;
 const MIN_VALUE_START_SOUND = 140;
 const INTERVAL_MULTIPLIER = MAX_INTERVAL / MAX_RGB_VALUE;
 
+const audioStart = new Audio(pathAudioStart);
+const audioLoop = new Audio(pathAudioLoop);
+
 const swapColors = () => {
   const bodyStyle = getComputedStyle(document.body);
   const backgroundColor = bodyStyle.getPropertyValue('--backgroundColor');
@@ -30,10 +33,7 @@ const loopSwap = () => {
 }
 
 const playAudio = () => {
-  const audioStart = new Audio(pathAudioStart);
-
   audioStart.addEventListener('ended', () => {
-    const audioLoop = new Audio(pathAudioLoop);
     audioLoop.loop = true;
     audioLoop.play();
   });
